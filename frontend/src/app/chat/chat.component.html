@@ -1,0 +1,13 @@
+<div>
+  <h1>Chat</h1>
+  <div id="chat-container">
+    <div *ngFor="let msg of msgs">
+      <strong>{{ msg.name }}:</strong> {{ msg.content }}
+    </div>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="click()">
+    <input formControlName="name" placeholder="Your name" required />
+    <input formControlName="content" placeholder="Message" required />
+    <button type="submit">Send</button>
+  </form>
+</div>
